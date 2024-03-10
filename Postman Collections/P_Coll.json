@@ -98,6 +98,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "8c3fcd9f-b0b3-4e00-8b34-94267f64b789",
 								"exec": [
 									"pm.test(\"Status code is 400\", function () {\r",
 									"    pm.response.to.have.status(400);\r",
@@ -110,8 +111,7 @@
 									"});\r",
 									""
 								],
-								"type": "text/javascript",
-								"id": "8c3fcd9f-b0b3-4e00-8b34-94267f64b789"
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -133,7 +133,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": dog,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"dog\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+							"raw": "{\r\n  \"id\": dog,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"Cat\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
 						},
 						"url": "https://petstore.swagger.io/v2/pet"
 					},
