@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "d58132e9-ad58-4616-9b75-7d160d0152a3",
+		"name": "POST /pet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "1833373-d58132e9-ad58-4616-9b75-7d160d0152a3"
+	},
+	"item": [
+		{
+			"name": "200",
+			"item": [
+				{
+					"name": "https://petstore.swagger.io/v2/pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "4dff6d8b-6be7-4896-8894-34d86b83befb"
+							}
+						}
+					],
+					"id": "c9a607ee-61e8-48a5-97f8-855c6d9b503a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 50,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"doggie\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "6a602e86-d2ed-4f5c-a7ec-c4fc0fe65073"
+		},
+		{
+			"name": "400",
+			"item": [
+				{
+					"name": "https://petstore.swagger.io/v2/pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "c6f86910-d6c2-4cef-a50e-b220ba7e7cb6"
+							}
+						}
+					],
+					"id": "a8cfc0ee-fa14-4aa2-99a2-8cfa419aaca6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": ,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"doggie\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "cd0f4471-5141-4b92-8f91-3c2eac839ee8"
+		},
+		{
+			"name": "500",
+			"item": [
+				{
+					"name": "https://petstore.swagger.io/v2/pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Server Error\");\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"id": "ea286492-f347-4ddc-9e84-b9d558103f32"
+							}
+						}
+					],
+					"id": "875c9ea2-3228-4fa4-9293-405bd7d25551",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"0/00\",\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"doggie\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/pet",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "946cba65-1f12-4c2f-9ad7-f99bf6bdd94e"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "6f30ffaf-34e1-415a-895f-a70852c4e8ba"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Response time is less than 1000ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+					"});"
+				],
+				"id": "3b2b41e1-7185-4e09-8fe6-d628a86f58ac"
+			}
+		}
+	]
+}

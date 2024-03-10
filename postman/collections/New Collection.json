@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "4d96dc4c-491c-4d6f-89ca-2a8a9fbff165",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "1833373-4d96dc4c-491c-4d6f-89ca-2a8a9fbff165"
+	},
+	"item": [
+		{
+			"name": "https://creditcalculator.pointschool.ru/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"pm.test(\"X-Powered-By is present\", function () {",
+							"    pm.response.to.have.header(\"X-Powered-By\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "ca84fbd9-e4f6-471a-8197-284381521070"
+					}
+				}
+			],
+			"id": "5f0ee60c-46a2-4140-bc1e-65bb8d78a5fd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://creditcalculator.pointschool.ru/",
+					"protocol": "https",
+					"host": [
+						"creditcalculator",
+						"pointschool",
+						"ru"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://creditcalculator.pointschool.ru/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([400, 404]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"id": "d644454f-efc6-46d0-8631-81928a83c5f2"
+					}
+				}
+			],
+			"id": "d61f12b9-a5ee-43d0-92ef-4f276e95cee4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://creditcalculator.pointschool.ru/",
+					"protocol": "https",
+					"host": [
+						"creditcalculator",
+						"pointschool",
+						"ru"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
